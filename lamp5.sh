@@ -3,6 +3,7 @@ echo "Enter password:"; read DJpass
 
 apt -y update
 apt -y upgrade
+apt-get dist-upgrade
 
 echo "Asia/Hong_Kong" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
