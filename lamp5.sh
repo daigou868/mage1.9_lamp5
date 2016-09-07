@@ -3,6 +3,15 @@ echo "Enter password:"; read DJpass
 
 apt -y update
 apt -y upgrade
+
+echo "Asia/Hong_Kong" > /etc/timezone
+dpkg-reconfigure -f noninteractive tzdata
+
+apt -y install ntp
+timedatectl set-timezone Asia/Hong_Kong
+sed -i 's/ubuntu.pool.ntp.org/asia.pool.ntp.org/g' /etc/ntp.conf
+service ntp restart
+
 apt -y install apache2 php5 php5-common libapache2-mod-php5 php5-mcrypt php5-cgi php5-cli php5-curl php5-gd php5-mysql libcurl3 php5-curl php5-gd php5-mcrypt git php-soap
 
 echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/fqdn.conf
