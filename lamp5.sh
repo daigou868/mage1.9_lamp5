@@ -31,7 +31,7 @@ php5enmod mcrypt
 rm -rf /var/www/html/*
 
 wget https://github.com/OpenMage/magento-mirror/archive/1.9.2.4.tar.gz
-tar -xvzf community_images.tar.gz
+tar -xvzf 1.9.2.4.tar.gz
 sudo rsync -avP /root/magento-mirror-1.9.2.4/. /var/www/html/
 
 chmod 644 /var/www/html/.htaccess
